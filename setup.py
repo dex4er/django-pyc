@@ -4,6 +4,11 @@ from setuptools import setup, find_packages
 setup(
     name='django-pyc',
     version=__import__('pyc').__version__,
+    packages = (
+        'pyc',
+        'pyc.management',
+        'pyc.management.commands'
+    ),
     description='Manage *.pyc files in Django project.',
     long_description=open('README.md').read(),
     author='Piotr Roszatycki',
