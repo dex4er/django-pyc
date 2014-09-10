@@ -3,12 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-pyc',
-    version=__import__('pyc').__version__,
-    packages = (
-        'pyc',
-        'pyc.management',
-        'pyc.management.commands'
-    ),
+    version=__import__('django_pyc').__version__,
     description='Manage *.pyc files in Django project.',
     long_description=open('README.md').read(),
     author='Piotr Roszatycki',
@@ -19,7 +14,11 @@ setup(
     include_package_data=True,
     zip_safe=False,
     keywords='django pyc clean compile',
-    packages=find_packages(),
+    packages = (
+        'django_pyc',
+        'django_pyc.management',
+        'django_pyc.management.commands'
+    ),
     install_requires=[
         'Django>=1.0'
         ],
