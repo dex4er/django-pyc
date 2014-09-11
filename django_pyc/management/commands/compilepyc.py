@@ -22,7 +22,7 @@ class Command(BaseCommand):
         dirs = sys.path if options['with_pythonpath'] else sys.path[:1]
         for d in dirs:
             if os.path.isdir(d) and os.access(d, os.W_OK):
-                for dirname, dirnames, filenames in os.walk(d):  # @UnusedVariable
+                for dirname, unused, filenames in os.walk(d):
                     for filename in filenames:
                         fullname = os.path.join(dirname, filename)
                         compileall.compile_file(fullname, quiet=quiet, force=options['force'])
