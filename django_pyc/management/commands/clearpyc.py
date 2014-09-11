@@ -21,9 +21,9 @@ class Command(BaseCommand):
 
     def handle(self, **options):
         dirs = sys.path if options['with_pythonpath'] else sys.path[:1]
-        for dir in dirs:
-            if os.path.isdir(dir) and os.access(dir, os.W_OK):
-                for dirname, dirnames, filenames in os.walk(dir):  # @UnusedVariable
+        for d in dirs:
+            if os.path.isdir(d) and os.access(d, os.W_OK):
+                for dirname, dirnames, filenames in os.walk(d):  # @UnusedVariable
                     for filename in filenames:
                         fullname = os.path.join(dirname, filename)
                         if re.search(self.pattern, fullname):
@@ -36,4 +36,4 @@ class Command(BaseCommand):
                                 print 'Removed', fullname
             else:
                 if int(options['verbosity']) >= 2:
-                    print 'Skipped', dir
+                    print 'Skipped', d
