@@ -11,7 +11,6 @@ setup(
     author='Piotr Roszatycki',
     author_email='piotr.roszatycki@gmail.com',
     url='http://github.com/dex4er/django-pyc',
-    download_url='http://github.com/dex4er/django-pyc/downloads',
     license='LGPL',
     include_package_data=True,
     zip_safe=False,
