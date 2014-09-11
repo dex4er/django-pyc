@@ -12,7 +12,7 @@ env:
 before_install:
   - sudo apt-get update -qq
 install:
-  - sudo apt-get install flake8
+  - sudo apt-get install python-flake8
   - flake8 --config .flake8 .
   - pip install -q Django==${DJANGO_VERSION} --use-mirrors
 script:
