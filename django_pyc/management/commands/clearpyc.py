@@ -33,7 +33,7 @@ class Command(BaseCommand):
                                     continue
                             os.remove(fullname)
                             if int(options['verbosity']) >= 2:
-                                print 'Removed', fullname
+                                print('Removed', fullname)
             else:
                 if int(options['verbosity']) >= 2:
-                    print 'Skipped', d
+                    print('Skipped', d)

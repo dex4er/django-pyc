@@ -27,4 +27,4 @@ class Command(BaseCommand):
                         compileall.compile_file(fullname, quiet=quiet)
             else:
                 if int(options['verbosity']) >= 2:
-                    print 'Skipped', d
+                    print('Skipped', d)
