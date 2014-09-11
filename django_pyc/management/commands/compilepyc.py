@@ -1,9 +1,9 @@
-from optparse import make_option
-from django.core.management.base import BaseCommand
-
 import compileall
+from optparse import make_option
 import os
 import sys
+
+from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
