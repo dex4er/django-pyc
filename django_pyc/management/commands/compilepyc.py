@@ -17,13 +17,14 @@ class Command(BaseCommand):
     )
 
     def handle(self, **options):
-        quiet = 1 if int(options['verbosity']) < 3 else 0
+        quiet = 1 if int(options['verbosity']) < 2 else 0
         dirs = sys.path if options['with_pythonpath'] else sys.path[:1]
         for dir in dirs:
             if os.path.isdir(dir) and os.access(dir, os.W_OK):
-                if int(options['verbosity']) >= 2:
-                    self.stdout.write("Compile '%s'..." % dir)
-                compileall.compile_dir(dir, quiet=quiet)
+                for dirname, dirnames, filenames in os.walk(dir):  # @UnusedVariable
+                    for filename in filenames:
+                        fullname = os.path.join(dirname, filename)
+                        compileall.compile_file(fullname, quiet=quiet)
             else:
                 if int(options['verbosity']) >= 2:
-                    self.stdout.write("Skipped '%s'." % dir)
+                    print 'Skipped', dir

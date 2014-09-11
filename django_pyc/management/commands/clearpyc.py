@@ -25,15 +25,15 @@ class Command(BaseCommand):
             if os.path.isdir(dir) and os.access(dir, os.W_OK):
                 for dirname, dirnames, filenames in os.walk(dir):  # @UnusedVariable
                     for filename in filenames:
-                        full_path = os.path.join(dirname, filename)
-                        if re.search(self.pattern, full_path):
+                        fullname = os.path.join(dirname, filename)
+                        if re.search(self.pattern, fullname):
                             if not options['force']:
-                                confirm_action = raw_input("Do you want to delete '%s'? [y/N]  " % full_path)
+                                confirm_action = raw_input("Do you want to delete '%s'? [y/N]  " % fullname)
                                 if confirm_action != 'y':
                                     continue
-                            os.remove(full_path)
+                            os.remove(fullname)
                             if int(options['verbosity']) >= 2:
-                                self.stdout.write("Removed '%s'." % full_path)
+                                print 'Removed', fullname
             else:
                 if int(options['verbosity']) >= 2:
-                    self.stdout.write("Skipped '%s'." % dir)
+                    print 'Skipped', dir
