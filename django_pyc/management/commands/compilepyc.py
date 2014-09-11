@@ -24,11 +24,14 @@ class Command(BaseCommand):
         dirs = sys.path if options['with_pythonpath'] else sys.path[:1]
         for d in dirs:
             if os.path.isdir(d) and os.access(d, os.W_OK):
-                for dirname, unused, filenames in os.walk(d):
-                    for filename in filenames:
-                        fullname = os.path.join(dirname, filename)
-                        compileall.compile_file(
-                            fullname, quiet=quiet, force=options['force'])
+                if sys.version_info < (2, 7):
+                    compileall.compile_dir(d, quiet=quiet, force=options['force'])
+                else:
+                    for dirname, unused, filenames in os.walk(d):
+                        for filename in filenames:
+                            fullname = os.path.join(dirname, filename)
+                            compileall.compile_file(
+                                fullname, quiet=quiet, force=options['force'])
             else:
                 if int(options['verbosity']) >= 2:
                     print('Skipped', d)
