@@ -34,4 +34,7 @@ or
 
 Tests
 -----
+
+Travis CI Status
+
 # [![Build Status](https://travis-ci.org/dex4er/django-pyc.png?branch=master)](https://travis-ci.org/dex4er/django-pyc)
