@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 setup(
@@ -16,14 +16,14 @@ setup(
     include_package_data=True,
     zip_safe=False,
     keywords='django pyc clean compile',
-    packages = (
+    packages=(
         'django_pyc',
         'django_pyc.management',
         'django_pyc.management.commands'
     ),
     install_requires=[
         'Django>=1.0'
-        ],
+    ],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
@@ -32,5 +32,5 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Framework :: Django',
-        ]
+    ]
 )
