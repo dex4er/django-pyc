@@ -6,7 +6,7 @@ from setuptools import setup
 setup(
     name='django-pyc',
     version=__import__('django_pyc').__version__,
-    description='Manage *.pyc files in Django project.',
+    description='Manage .pyc files in Django project.',
     long_description=open('README.md').read(),
     author='Piotr Roszatycki',
     author_email='piotr.roszatycki@gmail.com',
@@ -14,7 +14,7 @@ setup(
     license='LGPL',
     include_package_data=True,
     zip_safe=False,
-    keywords='django pyc clean compile',
+    keywords='django pyc clean compile compileall',
     packages=(
         'django_pyc',
         'django_pyc.management',
