@@ -16,8 +16,8 @@ matrix:
 before_install:
   - sudo apt-get update -qq
 install:
-  - pip install -q flake8 --use-mirrors
+  - pip install -q flake8
   - flake8 --config .flake8 .
-  - pip install -q Django==${DJANGO_VERSION} --use-mirrors
+  - pip install -q Django==${DJANGO_VERSION}
 script:
   - python manage.py test
