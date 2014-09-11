@@ -1,25 +1,29 @@
-import sys
-
 from optparse import make_option
-from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
-# stop the project from compiling bytecode when running clean command.
-sys.dont_write_bytecode = True
+import compileall
+import os
+import sys
+
 
 class Command(BaseCommand):
-    """
-    Manages *.pyc files in the project.
-    """
-
     help = \
     """
-    Manages *.pyc files in the project.
+    Compiles .pyc files in the project.
     """
 
-    option_list = BaseCommand.option_list  + (
-        make_option('-f', '--force', action="store_true", default=False, dest='force', help='Force the cleanup without user interaction.'),
+    option_list = BaseCommand.option_list + (
+        make_option('-p', '--with-pythonpath', action="store_true", default=False, dest='with_pythonpath', help='Compile also PYTHONPATH libraries.'),
     )
 
-    def handle(self, force, **kwargs):
-        self.stdout.write("TODO compilepyc command.")
+    def handle(self, **options):
+        quiet = 1 if int(options['verbosity']) < 3 else 0
+        dirs = sys.path if options['with_pythonpath'] else sys.path[:1]
+        for dir in dirs:
+            if os.path.isdir(dir) and os.access(dir, os.W_OK):
+                if int(options['verbosity']) >= 2:
+                    self.stdout.write("Compile '%s'..." % dir)
+                compileall.compile_dir(dir, quiet=quiet)
+            else:
+                if int(options['verbosity']) >= 2:
+                    self.stdout.write("Skipped '%s'." % dir)
