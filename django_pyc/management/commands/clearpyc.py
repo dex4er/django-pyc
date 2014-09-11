@@ -13,8 +13,8 @@ input = raw_input if sys.version_info < (3, 0) else input
 class Command(BaseCommand):
     help = \
         """
-    Clears .pyc files from the project.
-    """
+        Clears .pyc files from the project.
+        """
 
     pattern = r'^.+\.pyc$'
 

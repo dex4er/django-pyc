@@ -11,8 +11,8 @@ from django.core.management.base import BaseCommand
 class Command(BaseCommand):
     help = \
         """
-    Compiles .pyc files in the project.
-    """
+        Compiles .pyc files in the project.
+        """
 
     option_list = BaseCommand.option_list + (
         make_option('-f', '--force', action="store_true", default=False, dest='force',
