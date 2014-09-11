@@ -1,0 +1,5 @@
+[flake8]
+max-line-length = 120
+
+# F821 undefined name
+ignore = F821

@@ -1,0 +1,19 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+  - "3.3"
+  - "3.4"
+env:
+  - DJANGO_VERSION=1.5
+  - DJANGO_VERSION=1.6
+  - DJANGO_VERSION=1.7
+before_install:
+  - sudo apt-get update -qq
+install:
+  - sudo apt-get install flake8
+  - flake8 --config .flake8 .
+  - pip install -q Django==${DJANGO_VERSION} --use-mirrors
+script:
+  - python manage.py test

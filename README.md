@@ -1,3 +1,4 @@
+
 django-pyc
 ==========
 
@@ -29,3 +30,8 @@ From your shell, type:
 or
 
     python manage.py compilepyc
+
+
+Tests
+-----
+# [![Build Status](https://travis-ci.org/dex4er/django-pyc.png?branch=master)](https://travis-ci.org/dex4er/django-pyc)
