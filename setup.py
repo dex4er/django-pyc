@@ -21,7 +21,7 @@ setup(
         'django_pyc.management.commands'
     ),
     install_requires=[
-        'Django>=1.0'
+        'Django>=1.5'
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
