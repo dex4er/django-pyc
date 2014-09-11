@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import compileall
 from optparse import make_option
 import os
