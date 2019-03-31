@@ -1,0 +1,16 @@
+[MASTER]
+load-plugins = pylint_django
+ignore = .venv
+
+[MESSAGES CONTROL]
+disable = duplicate-code, invalid-name, missing-docstring
+
+[DESIGN]
+min-public-methods = 0
+max-line-length = 300
+max-locals = 25
+max-nested-blocks = 8
+max-parents = 15
+
+[MISCELLANEOUS]
+notes = FIXME, XXX

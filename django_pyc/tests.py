@@ -4,8 +4,10 @@ from django.test import TestCase
 
 class ClearCache(TestCase):
 
-    def test_compilepyc(self):
+    @staticmethod
+    def test_compilepyc():
         call_command('compilepyc', verbosity=1, force=True)
 
-    def test_clearpyc(self):
+    @staticmethod
+    def test_clearpyc():
         call_command('clearpyc', verbosity=1, force=True)
