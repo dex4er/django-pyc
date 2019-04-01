@@ -1,6 +1,10 @@
 Changes
 =======
 
+1.0.1 (2019-04-01)
+
+- Minor bugfixes for documentation and build process.
+
 1.0.0 (2019-04-01)
 ------------------
 
