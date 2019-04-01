@@ -53,7 +53,7 @@ Options:
 ``-p``, ``--with-pythonpath``
   Remove also PYTHONPATH libraries.
 
-path
+``path``
   Directories with libraries
 
 Example:
@@ -78,7 +78,7 @@ Options:
 ``-p``, ``--with-pythonpath``
   Compile also PYTHONPATH libraries.
 
-path
+``path``
   Directories with libraries
 
 Example:
