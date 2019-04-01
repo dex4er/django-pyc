@@ -92,3 +92,8 @@ files:
 .. code:: sh
 
   ./manage.py compilepyc --verbosity 2 application
+
+License
+-------
+
+Copyright 2014, 2019, Piotr Roszatycki
