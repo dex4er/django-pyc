@@ -17,14 +17,11 @@ env:
 install:
   - pip install pipenv
   - pipenv install --dev
-  - ( pipenv lock --requirements && pipenv lock --dev --requirements ) | sort -u > requirements.txt
   - pipenv run pip install Django==${DJANGO_VERSION}
 
 script:
   - pipenv run flake8
   - pipenv run pylint django_pyc test_project *.py
-  - pipenv run mypy .
-  - pipenv run safety check
   - pipenv run bandit -r . -f screen
   - pipenv run doc8 README.rst
 
