@@ -96,4 +96,4 @@ files:
 License
 -------
 
-Copyright 2014, 2019, Piotr Roszatycki
+Copyright © 2014, 2019, Piotr Roszatycki
