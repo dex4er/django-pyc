@@ -23,7 +23,9 @@ script:
   - pipenv run flake8
   - pipenv run pylint --rcfile=setup.cfg django_pyc test_project *.py
   - pipenv run bandit --ini setup.cfg --recursive --format screen .
-  - pipenv run doc8 README.rst
+  - pipenv run doc8 *.rst
 
   - pipenv run python manage.py test
   - pipenv run python setup.py sdist bdist_wheel
+
+  - make -C docs html

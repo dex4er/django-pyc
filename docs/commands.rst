@@ -6,6 +6,8 @@ clearpyc
 
 Clears .pyc files from the project.
 
+.. program:: clearpyc
+
 .. option:: --noinput
 
     Do NOT prompt the user for input of any kind.
@@ -36,6 +38,8 @@ compilepyc
 ----------
 
 Compiles .pyc files in the project.
+
+.. program:: compilepyc
 
 .. option:: -f, --force
 
