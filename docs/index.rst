@@ -2,6 +2,9 @@
 django-pyc |release| documentation
 ==================================
 
-.. include:: ../README.rst
+.. toctree::
+    :maxdepth: 2
 
-.. include:: ../CHANGES.rst
+    installation
+    commands
+    license

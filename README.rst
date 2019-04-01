@@ -42,21 +42,17 @@ clearpyc
 
 Clears .pyc files from the project.
 
-.. option:: --noinput
+--noinput
+  Do NOT prompt the user for input of any kind.
 
-    Do NOT prompt the user for input of any kind.
+-f, --force
+  Force the removing files without user interaction.
 
-.. option:: -f, --force
+-p, --with-pythonpath
+  Remove also PYTHONPATH libraries.
 
-    Force the removing files without user interaction.
-
-.. option:: -p, --with-pythonpath
-
-    Remove also PYTHONPATH libraries.
-
-.. option:: path
-
-    Directories with libraries
+path
+  Directories with libraries
 
 Example:
 
@@ -72,17 +68,14 @@ compilepyc
 
 Compiles .pyc files in the project.
 
-.. option:: -f, --force
+-f, --force
+  Force the compiling files even if timestamps are up-to-date.
 
-    Force the compiling files even if timestamps are up-to-date.
+-p, --with-pythonpath
+  Compile also PYTHONPATH libraries.
 
-.. option:: -p, --with-pythonpath
-
-    Compile also PYTHONPATH libraries.
-
-.. option:: path
-
-    Directories with libraries
+path
+  Directories with libraries
 
 Example:
 
