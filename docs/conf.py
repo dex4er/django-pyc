@@ -17,6 +17,8 @@
 import os
 import sys
 
+sys.path.append('.')
+
 import django_pyc
 
 # If extensions (or modules to document with autodoc) are in another directory,
