@@ -42,3 +42,13 @@ or
 .. code:: sh
 
   python manage.py compilepyc
+
+Example
+^^^^^^^
+
+Run commands without prompts and with list of processed files:
+
+.. code:: sh
+
+  ./manage.py clearpyc --noinput --verbosity 2 application
+  ./manage.py compilepyc --verbosity 2 application

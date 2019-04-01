@@ -21,8 +21,8 @@ install:
 
 script:
   - pipenv run flake8
-  - pipenv run pylint django_pyc test_project *.py
-  - pipenv run bandit -r . -f screen
+  - pipenv run pylint --rcfile=setup.cfg django_pyc test_project *.py
+  - pipenv run bandit --ini setup.cfg --recursive --format screen .
   - pipenv run doc8 README.rst
 
   - pipenv run python manage.py test

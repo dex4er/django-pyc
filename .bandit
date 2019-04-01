@@ -1,3 +1,0 @@
-[bandit]
-exclude = .venv
-skips = B322
