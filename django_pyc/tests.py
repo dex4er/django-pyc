@@ -1,11 +1,5 @@
 from django.core.management import call_command
 from django.test import TestCase
-from django.test.runner import DiscoverRunner
-
-
-class Runner(DiscoverRunner):
-    def __init__(self):
-        pass
 
 
 class ClearCache(TestCase):
