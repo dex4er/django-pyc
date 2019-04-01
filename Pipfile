@@ -6,10 +6,11 @@ verify_ssl = true
 [dev-packages]
 bandit = "*"
 doc8 = "*"
+docutils = "*"
 flake8 = "*"
-pygments = "*"
 pylint = "*"
 pylint-django = "*"
+pygments = "*"
 
 [packages]
 django = ">= 2.0"
