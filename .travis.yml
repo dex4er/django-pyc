@@ -26,3 +26,4 @@ script:
   - pipenv run doc8 README.rst
 
   - pipenv run python manage.py test
+  - pipenv run python setup.py sdist bdist_wheel
