@@ -25,7 +25,7 @@ class Command(BaseCommand):
         )
         parser.add_argument(
             '-p', '--with-pythonpath', action="store_true", default=False,
-            dest='with_pythonpath', help='Compile also PYTHONPATH libraries.'
+            dest='with_pythonpath', help='Remove also PYTHONPATH libraries.'
         )
         parser.add_argument(
             'path', nargs=argparse.REMAINDER,

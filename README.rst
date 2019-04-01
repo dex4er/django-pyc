@@ -18,7 +18,13 @@ Python libraries.
 Installation
 ------------
 
-Add `django_pyc` to your installed apps in your settings.py file.
+Install with ``pip`` or ``pipenv``:
+
+.. code:: python
+
+  pip install django-pyc
+
+Add ``django_pyc`` to your installed apps in your settings.py file:
 
 .. code:: python
 
@@ -28,27 +34,61 @@ Add `django_pyc` to your installed apps in your settings.py file.
   ]
 
 
-Usage
------
+Commands
+--------
 
-From your shell, type:
+clearpyc
+^^^^^^^^
 
-.. code:: sh
+Clears .pyc files from the project.
 
-  python manage.py clearpyc
+.. option:: --noinput
 
-or
+    Do NOT prompt the user for input of any kind.
 
-.. code:: sh
+.. option:: -f, --force
 
-  python manage.py compilepyc
+    Force the removing files without user interaction.
 
-Example
-^^^^^^^
+.. option:: -p, --with-pythonpath
 
-Run commands without prompts and with list of processed files:
+    Remove also PYTHONPATH libraries.
+
+.. option:: path
+
+    Directories with libraries
+
+Example:
+
+Run command for ``application`` directory only, without prompts and list
+processed files:
 
 .. code:: sh
 
   ./manage.py clearpyc --noinput --verbosity 2 application
+
+compilepyc
+^^^^^^^^^^
+
+Compiles .pyc files in the project.
+
+.. option:: -f, --force
+
+    Force the compiling files even if timestamps are up-to-date.
+
+.. option:: -p, --with-pythonpath
+
+    Compile also PYTHONPATH libraries.
+
+.. option:: path
+
+    Directories with libraries
+
+Example:
+
+Run command Run command for ``application`` directory only and list processed
+files:
+
+.. code:: sh
+
   ./manage.py compilepyc --verbosity 2 application
