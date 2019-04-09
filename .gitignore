@@ -8,9 +8,11 @@ __pycache__
 /Pipfile.lock
 
 /.cache
+/.eggs
 /.mypy_cache
 /.project
 /.pydevproject
+/.pytest_cache
 /.settings
 /.vscode
 
