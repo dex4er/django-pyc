@@ -1,1 +1,1 @@
-include AUTHORS CHANGES.rst LICENSE README.rst
+include AUTHORS CHANGES.rst LICENSE README.rst manage.py *requirements.txt docs/* docs/_static/* test_project/*.py
