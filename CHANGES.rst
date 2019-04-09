@@ -1,7 +1,13 @@
 Changes
 =======
 
+1.0.2 (2019-04-09)
+------------------
+
+- Works with Python 2.x and Django 1.1x too.
+
 1.0.1 (2019-04-01)
+------------------
 
 - Minor bugfixes for documentation and build process.
 

@@ -2,31 +2,53 @@ dist: xenial
 
 language: python
 
-python:
-  - "3.5"
-  - "3.6"
-  - "3.7"
+matrix:
+  include:
+    - python: "3.7"
+      env: DJANGO_VERSION=2.2 TEST_LINT=yes
+
+    - python: "3.7"
+      env: DJANGO_VERSION=2.1
+
+    - python: "3.7"
+      env: DJANGO_VERSION=2.0
+
+    - python: "3.6"
+      env: DJANGO_VERSION=2.2
+
+    - python: "3.5"
+      env: DJANGO_VERSION=2.2
+
+    - python: "2.7"
+      env: DJANGO_VERSION=1.11
+
+    - python: "2.7"
+      env: DJANGO_VERSION=1.10
 
 env:
   global:
     - PIPENV_VERBOSITY=-1
-  matrix:
-    - DJANGO_VERSION=2.0
-    - DJANGO_VERSION=2.1
-    - DJANGO_VERSION=2.2
 
 install:
   - pip install pipenv
   - pipenv install --dev
+  - pipenv run pip install -r requirements.txt
+  - if [ "$TEST_LINT" = yes ]; then
+      pipenv run pip install -r dev-requirements.txt;
+    else
+      pipenv run pip install docutils Pygments;
+    fi
   - pipenv run pip install Django==${DJANGO_VERSION}.*
 
 script:
-  - pipenv run flake8
-  - pipenv run pylint --rcfile=setup.cfg django_pyc test_project *.py
-  - pipenv run bandit --ini setup.cfg --recursive --format screen .
-  - pipenv run doc8 *.rst
-
+  - if [ "$TEST_LINT" = yes ]; then
+      pipenv run flake8;
+      pipenv run pylint --rcfile=setup.cfg django_pyc test_project *.py;
+      pipenv run bandit --ini setup.cfg --recursive --format screen .;
+      pipenv run doc8 *.rst;
+      make -C docs html;
+    fi
   - pipenv run python manage.py test
+  - pipenv run python setup.py check
   - pipenv run python setup.py sdist bdist_wheel
-
-  - make -C docs html
+  - pipenv run pip install dist/*.whl
