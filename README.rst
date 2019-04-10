@@ -90,6 +90,13 @@ files:
 
   ./manage.py compilepyc --verbosity 2 application
 
+
+Documentation
+-------------
+
+See http://django-pyc.readthedocs.org/
+
+
 License
 -------
 
