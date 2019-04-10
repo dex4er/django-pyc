@@ -3,10 +3,10 @@ import compileall
 import os
 import sys
 
-from django.core.management.base import BaseCommand
+from django.core.management import base
 
 
-class Command(BaseCommand):
+class Command(base.BaseCommand):
     help = \
         """
         Compiles .pyc files in the project.
@@ -14,16 +14,16 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '-f', '--force', action="store_true", default=False, dest='force',
-            help='Force the compiling files even if timestamps are up-to-date.'
+            '-f', '--force', action='store_true', default=False, dest='force',
+            help="Force the compiling files even if timestamps are up-to-date."
         )
         parser.add_argument(
-            '-p', '--with-pythonpath', action="store_true", default=False,
-            dest='with_pythonpath', help='Compile also PYTHONPATH libraries.'
+            '-p', '--with-pythonpath', action='store_true', default=False, dest='with_pythonpath',
+            help="Compile also PYTHONPATH libraries."
         )
         parser.add_argument(
             'path', nargs=argparse.REMAINDER,
-            help='Directories with libraries'
+            help="Directories with libraries"
         )
 
     def handle(self, *args, **options):
@@ -41,4 +41,4 @@ class Command(BaseCommand):
                             fullname, quiet=quiet, force=options['force'])
             else:
                 if int(options['verbosity']) >= 2:
-                    self.stdout.write('Skipped %s' % d)
+                    self.stdout.write("Skipped %s" % d)

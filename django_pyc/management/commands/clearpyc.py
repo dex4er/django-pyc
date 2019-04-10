@@ -3,10 +3,10 @@ import os
 import re
 import sys
 
-from django.core.management.base import BaseCommand
+from django.core.management import base
 
 
-class Command(BaseCommand):
+class Command(base.BaseCommand):
     help = \
         """
         Clears .pyc files from the project.
@@ -16,20 +16,20 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '--noinput', action="store_true", default=False,
-            dest='noinput', help='Do NOT prompt the user for input of any kind.'
+            '--noinput', action='store_true', default=False, dest='noinput',
+            help="Do NOT prompt the user for input of any kind."
         )
         parser.add_argument(
-            '-f', '--force', action="store_true", default=False,
-            dest='force', help='Force the removing files without user interaction.'
+            '-f', '--force', action='store_true', default=False, dest='force',
+            help="Force the removing files without user interaction."
         )
         parser.add_argument(
-            '-p', '--with-pythonpath', action="store_true", default=False,
-            dest='with_pythonpath', help='Remove also PYTHONPATH libraries.'
+            '-p', '--with-pythonpath', action='store_true', default=False, dest='with_pythonpath',
+            help="Remove also PYTHONPATH libraries."
         )
         parser.add_argument(
             'path', nargs=argparse.REMAINDER,
-            help='Directories with libraries'
+            help="Directories with libraries"
         )
 
     def handle(self, *args, **options):
@@ -50,7 +50,7 @@ class Command(BaseCommand):
                                     continue
                             os.remove(fullname)
                             if int(options['verbosity']) >= 2:
-                                self.stdout.write('Removed %s' % fullname)
+                                self.stdout.write("Removed %s" % fullname)
             else:
                 if int(options['verbosity']) >= 2:
-                    self.stdout.write('Skipped %s' % d)
+                    self.stdout.write("Skipped %s" % d)
