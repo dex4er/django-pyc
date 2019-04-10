@@ -4,6 +4,8 @@
    :target: https://travis-ci.org/dex4er/django-pyc
 .. image:: https://readthedocs.org/projects/django-pyc/badge/?version=latest
    :target: http://django-pyc.readthedocs.org/en/latest/
+.. image:: https://img.shields.io/pypi/pyversions/django-pyc.svg
+.. image:: https://img.shields.io/pypi/djversions/django-pyc.svg
 
 django-pyc
 ==========
