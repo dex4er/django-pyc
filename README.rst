@@ -5,7 +5,9 @@
 .. image:: https://readthedocs.org/projects/django-pyc/badge/?version=latest
    :target: http://django-pyc.readthedocs.org/en/latest/
 .. image:: https://img.shields.io/pypi/pyversions/django-pyc.svg
+   :target: https://www.python.org/
 .. image:: https://img.shields.io/pypi/djversions/django-pyc.svg
+   :target: https://www.djangoproject.com/
 
 django-pyc
 ==========
