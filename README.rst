@@ -1,6 +1,6 @@
-.. image:: https://img.shields.io/pypi/v/django-pyc.png
+.. image:: https://img.shields.io/pypi/v/django-pyc.svg
    :target: https://pypi.python.org/pypi/django-pyc
-.. image:: https://travis-ci.org/dex4er/django-pyc.png?branch=master
+.. image:: https://travis-ci.org/dex4er/django-pyc.svg?branch=master
    :target: https://travis-ci.org/dex4er/django-pyc
 .. image:: https://readthedocs.org/projects/django-pyc/badge/?version=latest
    :target: http://django-pyc.readthedocs.org/en/latest/
