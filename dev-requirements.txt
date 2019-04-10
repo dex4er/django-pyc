@@ -1,3 +1,4 @@
+-r requirements.txt
 bandit
 doc8
 docutils
