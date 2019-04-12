@@ -121,6 +121,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django_pyc',
+
+    'test_project',
 )
 
 # A sample logging configuration. The only tangible logging
