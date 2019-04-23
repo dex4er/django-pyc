@@ -4,8 +4,8 @@ doc8
 docutils
 flake8
 pygments
-pylint >=2; python_version >= '3'
-pylint <2; python_version < '3'
-pylint-django >=2; python_version >= '3'
-pylint-django <2; python_version < '3'
+pylint >= 2; python_version >= '3'
+pylint < 2; python_version < '3'
+pylint-django >= 2; python_version >= '3'
+pylint-django < 2; python_version < '3'
 sphinx

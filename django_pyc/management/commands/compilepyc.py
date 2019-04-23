@@ -14,12 +14,12 @@ class Command(base.BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '-f', '--force', action='store_true', default=False, dest='force',
-            help="Force the compiling files even if timestamps are up-to-date."
+            '-f', '--force', dest='force', action='store_true', default=False,
+            help="Force the removing files without user interaction."
         )
         parser.add_argument(
-            '-p', '--with-pythonpath', action='store_true', default=False, dest='with_pythonpath',
-            help="Compile also PYTHONPATH libraries."
+            '-p', '--with-pythonpath', dest='with_pythonpath', action='store_true', default=False,
+            help="Remove also PYTHONPATH libraries."
         )
         parser.add_argument(
             'path', nargs=argparse.REMAINDER,

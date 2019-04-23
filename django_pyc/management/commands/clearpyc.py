@@ -16,15 +16,15 @@ class Command(base.BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '--noinput', default=False, dest='noinput',
+            '--noinput', dest='noinput', action='store_true', default=False,
             help="Do NOT prompt the user for input of any kind."
         )
         parser.add_argument(
-            '-f', '--force', default=False, dest='force',
+            '-f', '--force', dest='force', action='store_true', default=False,
             help="Force the removing files without user interaction."
         )
         parser.add_argument(
-            '-p', '--with-pythonpath', default=False, dest='with_pythonpath',
+            '-p', '--with-pythonpath', dest='with_pythonpath', action='store_true', default=False,
             help="Remove also PYTHONPATH libraries."
         )
         parser.add_argument(

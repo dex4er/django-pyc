@@ -1,6 +1,12 @@
 Changes
 =======
 
+1.1.0 (2019-04-23)
+------------------
+
+- Options ``--noinput``, ``--force`` and ``--with-pythonpath`` should not
+  accept any parameters.
+
 1.0.4 (2019-04-11)
 ------------------
 
